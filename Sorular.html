@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SıkçaSorulanSorular</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="session.js"></script>
+    <script src="https://kit.fontawesome.com/df4ff89c1f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/main.css">
+
+  
+</head>
+<body onload="checkLogin()">
+   
+  <header class="p-3 bg-success ">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 me-5  mb-lg-0 text-white text-decoration-none">
+         <a href="index.html"> <img class="d-flex" width="100" height="100" src="img/KHas.png" /></a>
+        </a>
+
+   
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 ms-5 justify-content-center mb-md-0">
+            <li><a href="index.html" class="nav-link px-2 text-dark">ANASAYFA</a></li>
+            <li><a href="Sorular.html" class="nav-link px-2 text-white">SSS</a></li>
+            <li><a href="iletisim.html" class="nav-link px-2 text-white">İLETİŞİM</a></li>
+            <li><a href="basvuru.html" id="basvuru" class="nav-link px-2 text-white" onclick="Basvuru_Kontrol()">BAŞVURU YAP</a></li>
+            <li><a href="ogrenim.html" class="nav-link px-2 text-white" ">ÖĞRENİM HAREKETLİLİĞİ</a></li>
+          </ul>
+          <div class="text-end " id="header_sag">
+            <div id="btn_div" >
+          <a href="GirisYap.html"><button type="button" class="btn btn-outline-light me-2">GİRİŞ YAP</button></a>
+          <a href="KayitOl.html"><button type="button" class="btn btn-outline-light">KAYIT OL</button></a>
+        </div>
+        </div>
+
+        <div class="text-end">
+          <button id="logout_Btn" type="button" class="btn btn-danger" style="display:none" onclick="logout()">Çıkış</button>
+      </div>
+      </div>
+    </div>
+  </header>
+
+
+
+
+
+
+      <h1>Sıkça Sorulan Sorular - Genel Bilgiler</h1>
+      <div class="container">
+
+        <div class="quer active">
+            <h3 class="quer-title">
+                Erasmus+ Programı dâhilinde proje sunmak istiyoruz.
+                 Başvuru öncesi ne yapmalıyız?
+            </h3>
+            <p class="quer-text">2019 yılı Ekim Ayı itibariyle Erasmus+ Programının ülke merkezli projelerine başvuru yapmak isteyenlerin Organizasyon Kimliğine (Organisation ID, OID) sahip olması gerekmektedir. Katılımcı Kimlik Kodunun (PIC) yerine OID kullanılacaktır.
+
+                Ancak, daha önce Erasmus+ Programına başvuruda bulunan ve PIC koduna sahip olanlara otomatik olarak OID atanmıştır. Atanmış olan OID, Organisation Registration system for Erasmus+ and European Solidarity Corps sayfasındaki “Search” alanına kurum/kuruluş adı veya “arama kriterlerini genişlet” butonu tıklanarak PIC kodu, vergi numarası vb. bilgiler girilerek öğrenilir. Önceki dönemlerde birden fazla PIC kodu almış olanlar, başvuru yapılacak programdan sorumlu birimle iletişime geçmelidir.
+                
+                Daha önce PIC kodu almamış olanlar ise yine Organisation Registration system for Erasmus+ and European Solidarity Corps sayfasında yer alan “Register my organisation” sekmesinden kayıt yaparak OID  alabilir. “Register my organisation” sekmesinde açılan sayfada EU Login kullanıcı bilgisi ile giriş yapılması gerekmektedir. EU Login hesabı (eski adı ile ECAS hesabı) olanlar mevcut hesapları ile sisteme giriş yapabililer. EU Login hesabı olmayanlar ise “Create an account” sekmesini tıklayarak bir EU Login hesabı edinerek sisteme giriş yapar.
+                
+                İlgili sisteme güncel bilgiler ile kayıt olunmalıdır. Kayıt yapılırken aşağıdaki hususlara dikkat edilmelidir:
+                
+                OID, Erasmus+ programının tüm ülke merkezli proje başvurularında kullanılmak üzere bir kere alınmalıdır.
+                
+                OID için kayıt oluştururken kaydı gerçekleştiren kişiye özgü kullanıcı adı ve şifreler yerine, her zaman hatırlanabilecek kullanıcı adı ve şifre tercih edilmelidir. Bu bilgiler sonraki dönem başvurularında da kullanılmak üzere ilgili kişilerin erişimine olanak sağlayacak şekilde muhafaza edilmelidir.
+                
+                Kayıt formundaki tüm bilgiler girildikten ve kayıt gerçekleştirildikten sonra sistem OID’yi  otomatik üretir. OID, "E" harfi ile başlayan ve  8 rakamla  devam eden bir numaradır (Örneğin: E12345678). OID kayıt süreci ile ilgili detaylı bilgilere Avrupa Komisyonu tarafından hazırlanan sayfadan ulaşılabilir. Kayıt süreci bilgisine aşağıdaki videodan ya da linkten ulaşabilirsiniz.</p>
+                <i class="fa-sharp fa-solid fa-chevron-down"></i>
+            </div>
+      
+
+      <div class="quer ">
+        <h3 class="quer-title">
+            Devam eden projelerimiz olduğu halde yeni projelere başvurabilir miyiz?
+        </h3>
+        <p class="quer-text">Evet başvurabilirsiniz. Ancak, ilgili kurumun yeni başvuru yapmadan önce kurumsal kapasitesinin birden fazla projeyi gereğince ve etkin bir şekilde yönetip yönetemeyeceğini analiz ederek buna göre başvuruda bulunması gerekmektedir..</p>
+        <i class="fa-sharp fa-solid fa-chevron-down"></i>
+    </div>
+
+    <div class="quer ">
+        <h3 class="quer-title">
+            Başvuru formunu Türkçe doldurabilir miyiz?
+        </h3>
+        <p class="quer-text">
+            Başvuru formu Program dillerinden herhangi biri ile doldurulabilmektedir. Türkçe, Program dilleri arasında yer almaktadır. Ancak, özellikle KA2 başvurularında ortaklar adına da başvuru yapıldığından ortak iletişim dilinde formun doldurulması önerilmektedir.
+        </p>
+        <i class="fa-sharp fa-solid fa-chevron-down"></i>
+    </div>
+
+
+    <div class="quer ">
+        <h3 class="quer-title">
+            Başvuru formuna eklenmesi gereken dokümanlar nelerdir?
+        </h3>
+        <p class="quer-text">
+            Tüm başvuru formları için zorunlu ana belge “Doğruluk Beyanı”dır. Doğruluk Beyanı başvuru formunun içinden indirilmektedir. Yasal temsilci tarafından imzalanıp onaylanmış doğruluk beyanı taranarak başvuru formuna eklenmelidir. Doğruluk beyanına ek olarak; KA1 konsorsiyum başvuruları ve KA2 stratejik ortaklık başvuruları için ortaklık yetki belgeleri eklenmelidir. Bu belgeler 
+            Türkçe ya da İngilizce dillerinden herhangi biri ile hazırlanabilir.        </p>
+            <i class="fa-sharp fa-solid fa-chevron-down"></i>
+        </div>
+
+    
+    <div class="quer ">
+        <h3 class="quer-title">
+            Devam eden projelerimiz olduğu halde yeni projelere başvurabilir miyiz?
+        </h3>
+        <p class="quer-text">
+            Evet başvurabilirsiniz. Ancak, ilgili kurumun yeni başvuru yapmadan önce kurumsal kapasitesinin birden fazla projeyi gereğince ve etkin bir şekilde yönetip yönetemeyeceğini analiz ederek buna göre başvuruda bulunması gerekmektedir.        </p>
+            <i class="fa-sharp fa-solid fa-chevron-down"></i>
+        </div>
+  
+
+</div>
+
+
+
+
+<div class="container">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+      <div class="col-md-4 d-flex align-items-center">
+        <span class="mb-3 mb-md-0 text-muted">&copy;  YTÜ Erasmus + Program Birimi. İstanbul, Türkiye.</span>
+      </div>
+  
+      <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+        <li class="ms-3"><a class="text-muted" href="https://twitter.com/YildizEdu" ><i class="fa-sharp fa-solid fa-dove"></i></a></li>
+        <li class="ms-3"><a class="text-muted" href="https://www.instagram.com/yildizedu/"><i class="fa-solid fa-camera"></i></a></li>
+        <li class="ms-3"><a class="text-muted" href="https://tr-tr.facebook.com/YildizEdu"><i class="fa-sharp fa-solid fa-f"></i></a></li>
+      </ul>
+    </footer>
+  </div>
+
+
+    <script src="js/script.js"></script>
+    <script src="js/bootstrap.bundle.min.js" ></script>
+   
+</body>
+</html>

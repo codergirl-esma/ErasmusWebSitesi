@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erasmus Başvuru Formu</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="alert/sweetalert2.min.css">
+    <script src="https://kit.fontawesome.com/df4ff89c1f.js" crossorigin="anonymous"></script>
+  
+    <link href="https://fonts.googleapis.com/css2?family=Phudu&display=swap" rel="stylesheet">
+
+    <style>
+         i {
+       
+        font-size: 30px;
+    }
+        hr{
+            border-top: 2px solid black;
+        }
+        body{
+            background-color: #dcf7ca;
+            color: #000000e3;
+        }
+        input{
+            height: 50px;
+            border-bottom: 1px solid rgba(#fff,.3);
+            background: transparent;
+            color:#fff;
+            font-size: 16px;
+        }
+        .form{
+            border: 1px solid rgba(#fff,.3);
+            padding: 25px;
+           
+        }
+        label{
+            color: #000;
+        }
+        label .form-label{
+                font-size: 14px;
+            color: rgba(#000,.8);
+            }
+       h1{
+        font-size: 40px;
+        margin-bottom: 30px;
+       }
+       h3{
+        font-size: 25px;
+        color: #717171;
+       }
+       .error-msg{
+        font-size: 13px;
+        padding-top: rgba(#ececec ,.8);
+        color:red;
+        display: block;
+        margin-top: 10px;
+       }
+
+      .ogrenciBilgi{
+        display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 14px;
+      }
+
+    </style>
+</head>
+<body onload=" checkLogin()">
+    
+ 
+   <script>
+        function AciklamaYok() {
+        if(document.getElementById('radio2')){
+            document.getElementById('aciklama').disabled = true;
+        }}
+    
+        function AciklamaVar() {
+        if(document.getElementById("radio1")){
+            document.getElementById("aciklama").disabled = false;
+        }}
+    </script>
+    <header class="p-3 bg-success ">
+        <div class="container">
+          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/" class="d-flex align-items-center mb-2 me-5  mb-lg-0 text-white text-decoration-none">
+             <a href="index.html"> <img class="d-flex" width="100" height="100" src="img/KHas.png" /></a>
+            </a>
+    
+       
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 ms-5 justify-content-center mb-md-0">
+                <li><a href="index.html" class="nav-link px-2 text-dark">ANASAYFA</a></li>
+                <li><a href="Sorular.html" class="nav-link px-2 text-white">SSS</a></li>
+                <li><a href="iletisim.html" class="nav-link px-2 text-white">İLETİŞİM</a></li>
+                <li><a href="basvuru.html" class="nav-link px-2 text-white">BAŞVURU YAP</a></li>
+                <li><a href="ogrenim.html" class="nav-link px-2 text-white" ">ÖĞRENİM HAREKETLİLİĞİ</a></li>
+              </ul>
+              <div class="text-end " id="header_sag">
+                <div id="btn_div" >
+              <a href="GirisYap.html"><button type="button" class="btn btn-outline-light me-2">Giriş Yap</button></a>
+              <a href="KayitOl.html"><button type="button" class="btn btn-outline-light">Kayıt Ol</button></a>
+            </div>
+            </div>
+  
+            <div class="text-end">
+              <button id="logout_Btn" type="button" class="btn btn-danger" style="display:none" onclick="logout()">Çıkış</button>
+          </div>
+          </div>
+        </div>
+      </header>
+
+
+      <form class="row" id="form1" name="deneme" novalidate>
+            <div class="row justify-content-center">
+                <div class="col-6">
+
+                    <div class="row">
+                        <div class="col-12">
+                            <h1 class="text-center" style="color:darkblue">ERASMUS + DEĞİŞİM PROGRAMI BAŞVURU FORMU</h1>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 7px;">Öğrenci Bilgileri</h3>
+
+                    <div class="row pt-xl-3" class="ogrenciBilgi">
+                        <div class="col-6">
+                            <div class="row g-2 ">
+                                 <div class="col-auto">
+                                   <label for="inputIsım" name="username" class="col-form-label">İsim :</label>
+                                </div>
+                                   <div class="col-auto">
+                                    <input type="text" id="inputIsım" class="form-control" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+
+                            <div class="row g-2 ">
+                                <div class="col-auto ms-5">
+                                    <label for="inputSoyisim" name="surname" class="col-form-label">Soyisim :</label>
+                                </div>
+                                <div class="col-auto">
+                                    <input type="text" id="inputSoyisim" class="form-control" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                            <div class="col-4 mt-3">
+                                <label for="idNo" class="form-label">Tc No / Pasaport No : </label>
+                                <input type="text" class="form-control"  maxlength="11" minlength="7" required id="idNo" placeholder="TcNo / PassNo">
+                          
+                            </div>
+                        
+                        <div class="col-4 mt-3">
+                          
+                            <span class="col-form-label">Cinsiyet:</span>
+                        <select class="form-select form-select-m mb-3">
+                            <option selected> </option>
+                            <option value="1">Kadın</option>
+                            <option value="2">Erkek</option>
+                        </select>
+                        </div>
+
+
+
+                        <div class="col-4 mt-3">
+                            
+                            <span class="col-form-label">Doğum Tarihi:</span>
+                            <input type="date" class="form-control" required/>
+                        </div>
+
+                        
+                        <div class="col-6 mt-3">
+                            <div class="row g-2 align-items-center">
+                                <div class="col-auto">
+                                    <label for="MilliyetBilgi" class="form-label">1. Milliyet: </label>
+                                </div>
+                                <div class="col-auto">
+                                    <input type="text" class="form-control" id="MilliyetBilgi" required>
+                                </div>
+                            </div>
+                            
+                      </div>
+
+                     <div class="col-6 mt-3">
+
+                        <div class="row g-2 align-items-center">
+                            <div class="col-auto ms-5">
+                                <label for="ikinciMilliyet" class="form-label">2. Milliyet : </label>
+                            </div>
+                            <div class="col-auto">
+                                <input type="text" id="ikinciMilliyet" class="form-control">
+                            </div>
+                        </div>
+
+                  </div>
+
+                    </div>
+
+                    <hr />
+                       
+                    <h3>İletişim Bilgileri</h3>
+
+                    <div class="row  pt-2">
+
+                        <div class="col-8">
+                                    <label for="emailadress" class="form-label">E - Mail : </label>
+                                    
+                                    <input type="email" class="form-control form-control-plaintext" name="emailadress" id="emailadress" required placeholder="E-mail adresinizi giriniz.." onkeyup="Validation()">
+                                    <i class="fa"></i>
+                                
+                                <p id="Text">...</p>
+                        </div>
+
+                        <div class="col-4">
+                            
+                            <label for="TelBilgi" class="form-label">Telefon No : </label>
+                       
+                            <input type="text" class="form-control" maxlength="10" id="TelBilgi" placeholder="5XXXXXXXXX">
+                            
+                        </div>
+
+                            <div class="col-3 mt-3">
+                           
+                                <label for="inputUlke" class="form-label">Ülke : </label>
+                                <input type="text" class="form-control" id="inputUlke">
+                              </div>
+
+                              <div class="col-3 mt-3">
+                                
+                                <label for="inputSehir" class="form-label">Şehir : </label>
+                                <input type="text" class="form-control" id="inputSehir">
+                              </div>
+                              <div class="col-3 mt-3">
+                               
+                                <label for="inputSemt" class="form-label">Semt : </label>
+                                <input type="text" class="form-control" id="inputSemt">
+                              </div>
+                              <div class="col-3 mt-3">
+                               
+                                <label for="inputZip" class="form-label">Zip Kodu :</label>
+                                <input type="number" class="form-control" id="inputZip">
+                              </div>
+                            
+                              <div class="col-12">
+                                <label for="inputAdres" class="form-label">Adres : </label>
+                                <input type="text" class="form-control" id="inputAdres" placeholder="Atatürk cad. bentler sok. Şirinevler mah">
+                              </div>
+                             
+                    </div>
+                    <hr />
+                  
+                    <h3>Eğitim Bilgileri</h3>
+                    <div class="row ">
+                        <div class="col-6">
+                            
+                            <div class="row g-2 align-items-center pt-2">
+                                <div class="col-auto">
+                                   <label for="universite" class="col-form-label" >Üniversite :</label>
+                                </div>
+                                <div class="col-auto m-2">
+                                    <input type="text" id="universite" class="form-control" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="row g-2 pt-2">
+                                <div class="col-auto">
+                                    <label for="depart" class="col-form-label">Departman :</label>
+                                </div>
+                                <div class="col-auto m-2">
+                                    <input type="text" id="depart" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                             <label for="inputOrtalama" class="col-form-label">GPA :</label>
+                             
+                             <input type="number" id="inputOrtalama" class="form-control">
+                           
+                        </div>
+
+                        <div class="col-6 mt-3">
+                            <span class="col-form-label">Mezuniyet Durumu:</span>
+                        <select class="form-select form-select-m mb-3">
+                            <option selected> </option>
+                            <option value="1">Ön Lisans</option>
+                            <option value="2">Lisans</option>
+                            <option value="3">Yüksek Lisans</option>
+                            <option value="3">Doktora</option>
+                        </select>
+                        </div>
+
+                        <div class="col-6">
+                            <span class="col-form-label">Okul Durumu : </span>
+                            <select class="form-select form-select-m mb-3">
+                            <option selected> </option>
+                            <option value="1">Mezun Oldu</option>
+                            <option value="2">Okula Devam Ediyor</option>
+                        </select>
+                        </div>
+
+
+                        <div class="col-6">
+                                    <span class="col-form-label">Mezun Tarihi :</span>
+                               
+                                    <input type="date" class="form-control" />
+                              
+                            </div>
+                       
+                    </div>
+                    <hr />
+
+                    <h3>Engel Durumuna İlişkin Bilgiler</h3>
+
+                    <div class="row">
+                        <div class="col-2">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="radio1" checked onclick="AciklamaVar()">
+                            <label class="form-check-label" for="radio1" id="aciklamaVar" >
+                              Var
+                            </label>
+                          </div>
+                        </div>
+                        <div class="col-2">
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="radio2" onclick="AciklamaYok()">
+                            <label class="form-check-label" for="radio2" id="aciklamaYok">
+                              Yok
+                            </label>
+                          </div>
+                        </div>
+                    
+                            <div class="col-8">
+                    <div class="row g-2 pt-2">
+                        <div class="col-auto">
+                    <label for="aciklama" class="col-form-label">Açıklama: </label>
+                </div> 
+                       
+                    <input type="text" id="aciklama" class="form-control"/>
+                
+                   </div>
+               </div>
+            </div>
+           
+            <hr />
+
+            <h3>Dosya Bilgileri</h3>
+            <div class="row">
+                <div class="col-12">
+                   
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" for="inputGroupFile01"> <h5>Cv</h5></label>
+                        <input type="file" class="form-control" id="inputGroupFile01" >
+                      </div>
+                </div>
+
+                <div class="col-12">
+                   
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" for="inputGroupFile01"> <h5>Niyet Mektubu</h5></label>
+                        <input type="file" class="form-control" id="inputGroupFile01">
+                      </div>
+                </div>
+
+                <div class="col-12">
+                   
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" for="inputGroupFile01"> <h5>Passaport</h5></label>
+                        <input type="file" class="form-control" id="inputGroupFile01">
+                      </div>
+                </div>
+
+                <div class="col-12">
+                   
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" for="inputGroupFile01"> <h5>İkametgah</h5></label>
+                        <input type="file" class="form-control" id="inputGroupFile01">
+                      </div>
+                </div>
+
+                <div class="col-12">
+                   
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" for="inputGroupFile01"> <h5>Diploma</h5></label>
+                        <input type="file" class="form-control" id="inputGroupFile01">
+                      </div>
+                </div>
+
+                <div class="col-12">
+                   
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" for="inputGroupFile01"> <h5>İngilizce Yeterlilik Belgesi</h5></label>
+                        <input type="file" class="form-control" id="inputGroupFile01">
+                      </div>
+                </div>
+
+            </div>
+
+                <div class="row mt-5">
+                    <div class="col-12 ">
+                        <div class="d-flex justify-content-center">
+                           <button type="button" class="btn btn-info" id="clickBtn">Gönder</button>
+                            <input type="reset" class="btn btn-m btn-outline-dark ms-5">
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                </div>
+             
+      </form>
+
+     
+
+      <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+          <div class="col-md-4 d-flex align-items-center">
+            <span class="mb-3 mb-md-0 text-muted">&copy;  YTÜ Erasmus + Program Birimi. İstanbul, Türkiye.</span>
+          </div>
+      
+          <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <li class="ms-3"><a class="text-muted" href="https://twitter.com/YildizEdu" ><i class="fa-sharp fa-solid fa-dove"></i></a></li>
+            <li class="ms-3"><a class="text-muted" href="https://www.instagram.com/yildizedu/"><i class="fa-solid fa-camera"></i></a></li>
+            <li class="ms-3"><a class="text-muted" href="https://tr-tr.facebook.com/YildizEdu"><i class="fa-sharp fa-solid fa-f"></i></a></li>
+          </ul>
+        </footer>
+      </div>
+      
+        
+     
+      
+
+     <script src="js/konrol.js"></script>
+
+     <script>
+        let clickBtn = document.getElementById('clickBtn');
+        clickBtn.addEventListener("click", function(){
+            Swal.fire({
+            icon: 'success',
+            title: 'TEBRİKLER!  BAŞVURUNUZ TAMAMLANDI',
+            footer: '<a href="Basvuru.html">Bilgi edinmek için iletişim kısmına gidebilirsiniz</a>',
+            timer : 4000,
+            toast : true,
+            timerProgressBar : true
+                    })
+        })
+      </script>
+      <script src="alert/sweetalert2.all.min.js"></script>
+      <script src="session.js"></script>
+      <script src="js/bootstrap.bundle.min.js" ></script>
+</body>
+</html>

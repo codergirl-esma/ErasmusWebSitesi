@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giriş Yap</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/Basvuru_Kontrol.js"></script>
+    <script src="https://kit.fontawesome.com/df4ff89c1f.js" crossorigin="anonymous"></script>
+
+    <style>
+      i{
+        font-size: x-large;
+      }
+    </style>
+  
+     <script>
+
+        var kullanici = sessionStorage.getItem("user");
+
+        kullanici = kullanici.split(",");
+
+        var isLogin = false;
+        
+        function girisKontrol() {
+ 
+
+            var mail = document.getElementById("email").value;
+            var sifre = document.getElementById("sifre").value;
+
+            var yazi = document.getElementById("sonuc");
+
+            if (mail == kullanici[0] && sifre == kullanici[1]) {
+
+                yazi.innerHTML = "Giriş bilgileri doğru!"; 
+                yazi.style.color = "green";
+
+                document.getElementById("btn_div").style.display = "none";
+                document.getElementById("header_sag").innerHTML = "Kullanıcı: " + kullanici[0];
+
+                isLogin = true;
+                if(isLogin === true){
+                  window.location= "basvuru.html";
+                  sessionStorage.setItem("isLogin", isLogin);
+                }else{
+                  logout();
+                }
+                
+
+            }
+            else {
+                yazi.innerHTML = "Girilen bilgiler hatalı.";
+                yazi.style.color = "red";
+            }
+
+
+        }
+    </script>
+</head>
+<body  onload="checkLogin()">
+  <header class="p-3 bg-success ">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 me-5  mb-lg-0 text-white text-decoration-none">
+         <a href="index.html"> <img class="d-flex" width="100" height="100" src="img/KHas.png" /></a>
+        </a>
+
+   
+           
+    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 ms-5 justify-content-center mb-md-0">
+      <li><a href="index.html" class="nav-link px-2 text-dark">ANASAYFA</a></li>
+      <li><a href="Sorular.html" class="nav-link px-2 text-white">SSS</a></li>
+      <li><a href="iletisim.html" class="nav-link px-2 text-white">İLETİŞİM</a></li>
+      <li><a href="basvuru.html" id="basvuru" class="nav-link px-2 text-white">BAŞVURU YAP</a></li>
+      <li><a href="ogrenim.html" class="nav-link px-2 text-white" ">ÖĞRENİM HAREKETLİLİĞİ</a></li>
+      </script>
+    </ul>
+          <div class="text-end " id="header_sag">
+            <div id="btn_div" >
+          <a href="GirisYap.html"><button type="button" class="btn btn-outline-light me-2">GİRİŞ YAP</button></a>
+          <a href="KayitOl.html"><button type="button" class="btn btn-outline-light">KAYIT OL</button></a>
+        </div>
+        </div>
+
+        <div class="text-end">
+          <button id="logout_Btn" type="button" class="btn btn-danger" style="display:none" onclick="logout()">Çıkış</button>
+      </div>
+      </div>
+    </div>
+  </header>
+
+
+      <section>
+        <div class="container w-25 mx-auto p-5">
+            <form>
+                <i class="fa-sharp fa-solid fa-arrow-right-to-bracket"></i>
+                 
+                    <h3> Giriş Yap</h3>
+                
+                <div class="form-floating py-2">
+                    <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                    <label for="floatingInput">Email adresi</label>
+                </div>
+                <div class="form-floating py-2">
+                    <input type="password" class="form-control" id="sifre" placeholder="Şifrenizi Giriniz">
+                    <label for="floatingPassword">Şifrenizi Giriniz</label>
+                </div>
+            </form>
+            
+            <p id="sonuc"></p>
+            <div class="d-grid gap-2 col-6 mx-auto" >
+                <button class="btn btn-secondary mt-5" id="clickBtn"  onclick="girisKontrol()" type="button">Giriş Yap</button>
+        </div>
+        </div>
+      </section>
+
+      <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+          <div class="col-md-4 d-flex align-items-center">
+            <span class="mb-3 mb-md-0 text-muted">&copy;  YTÜ Erasmus + Program Birimi. İstanbul, Türkiye.</span>
+          </div>
+      
+          <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <li class="ms-3"><a class="text-muted" href="https://twitter.com/YildizEdu" ><i class="fa-sharp fa-solid fa-dove"></i></a></li>
+            <li class="ms-3"><a class="text-muted" href="https://www.instagram.com/yildizedu/"><i class="fa-solid fa-camera"></i></a></li>
+            <li class="ms-3"><a class="text-muted" href="https://tr-tr.facebook.com/YildizEdu"><i class="fa-sharp fa-solid fa-f"></i></a></li>
+          </ul>
+        </footer>
+      </div>
+    
+</body>
+<script>
+ 
+</script>
+
+<script src="session.js"></script>
+<script src="js/bootstrap.bundle.min.js" ></script>
+</html>

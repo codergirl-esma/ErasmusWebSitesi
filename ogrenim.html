@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Öğrenim Hareketliliği</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="session.js"></script>
+    <link rel="stylesheet" href="css/sayac.css">
+    <script src="https://kit.fontawesome.com/df4ff89c1f.js" crossorigin="anonymous"></script>
+
+</head>
+<body onload="checkLogin()">
+    <header class="p-3 bg-success ">
+        <div class="container">
+          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/" class="d-flex align-items-center mb-2 me-5  mb-lg-0 text-white text-decoration-none">
+             <a href="index.html"> <img class="d-flex" width="100" height="100" src="img/KHas.png" /></a>
+            </a>
+    
+       
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 ms-5 justify-content-center mb-md-0">
+                <li><a href="index.html" class="nav-link px-2 text-dark">ANASAYFA</a></li>
+                <li><a href="Sorular.html" class="nav-link px-2 text-white">SSS</a></li>
+                <li><a href="iletisim.html" class="nav-link px-2 text-white">İLETİŞİM</a></li>
+                <li><a href="basvuru.html" id="basvuru" class="nav-link px-2 text-white" >BAŞVURU YAP</a></li>
+                <li><a href="ogrenim.html" class="nav-link px-2 text-white" ">ÖĞRENİM HAREKETLİLİĞİ</a></li>
+              </ul>
+              <div class="text-end " id="header_sag">
+                <div id="btn_div" >
+              <a href="GirisYap.html"><button type="button" class="btn btn-outline-light me-2">GİRİŞ YAP</button></a>
+              <a href="KayitOl.html"><button type="button" class="btn btn-outline-light">KAYIT OL</button></a>
+            </div>
+            </div>
+  
+            <div class="text-end">
+              <button id="logout_Btn" type="button" class="btn btn-danger" style="display:none" onclick="logout()">Çıkış</button>
+          </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="container">
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8">
+                <h1 style="text-align: center; padding: 30px;">Öğrenim Hareketliliği</h1>
+                <p>Bireylerin Öğrenme Hareketliliği Ana Eylemi (Key Action 1, KA1) altında yer alan bu faaliyet ile yükseköğretim öğrencilerinin yeterliliklerinin geliştirilmesi ve bu kişilere yurt dışında mesleki gelişim fırsatları sunulması hedeflenmektedir. Bu kapsamda, yükseköğrenimine devam eden kişilerin yurtdışı eğitim fırsatlarını arttırmaya, eğitim-öğretimden iş hayatına geçiş yapabilmeleri için ihtiyaç duydukları becerileri kazandırmaya yönelik olarak öğrenim hareketliliği faaliyetleri desteklenmektedir.</p>
+                
+                <h5 style="padding-top: 5px;">Faaliyet Süreleri Ne Kadardır?
+                </h5>
+                <p>Öğrenim hareketliliğinde; Güz ya da Bahar dönemi (4-5 ay)</p>
+                <p>         Hareketlilik faaliyetine katılan öğrencilerin yurtdışında faaliyetlerini gerçekleştirdikleri süre zarfında, halihazırda aldıkları yükseköğretim bursları ve kredileri öğrenim/staj faaliyeti sırasında sonlandırılamaz, kesintiye uğratılamaz ve azaltılamaz. Yalnızca YTB burslusu öğrencilerin faaliyete katılımları halinde YTB burslarında kesinti söz konusu olup öğrenciler bu bilgi dahilinde Erasmus Kurum 
+                    Koordinatörlüğüne dilekçe vererek hareketliliğe dahil olabilirler. Yükseköğretim Yürütme Kurulunun 31.01.2018 tarihli toplantısında 
+                    uygun bulunan “Yükseköğretim Kurulu Tarafından Yurtdışından Gelecek Yabancı Uyruklu Öğrencilere Sağlanacak Desteklere İlişkin Usul ve Esaslar” uyarınca burslandırılan YÖK Burslusu yabancı uyruklu öğrencilerin, Türkiye’deki eğitimleri esnasında başka bir akademik değişim programına (Mevlana, Erasmus+, vb.) katılamayacağına, Yükseköğretim Yürütme Kurulunun 04.04.2018 tarihli toplantısında karar verilmiştir.
+                    Hibe ödemeleri Türkiye Ulusal Ajansı tarafından üniversitemize yapılan ödeme ile orantılı olarak yapılmaktadır. Öğrencilere hibeleri yüzde 80 ilk ödeme ve yüzde 20 ikinci ödeme olarak 2 taksitte yapılır. İlk taksitin ödemesi öğrenci gitmeden önce yapılır. İkinci taksitin ödemesi değişim dönemi sonunda, öğrencinin Öğrenci Final Raporu(Online Nihai Rapor), Transkript, ve Katılım Sertifikasını teslim etmesi 
+                    sonrası, Katılım Sertifikasında belirtilen öğrenim başlangıç-bitiş tarihlerine göre toplam hibesi yeniden hesap edilerek yapılır.
+                    Belirtilen asgari sürelere uyulmaması durumunda faaliyet geçersiz sayılacak olup, öğrenciye yapılmış olan hibe ödemesinin tamamının iade edilme zorunluluğu ortaya çıkacaktır. Faaliyet süreleri karşı kurumlardan alınan Katılım Belgesi  ile desteklenerek faaliyet süresi kesinleştirilir.</p>
+            
+            </div>
+            <div class="col-2"></div>
+        </div>
+      </div>
+
+
+
+        <!-- SAYAC YAPIMI -->
+        <div class="container" id="geri_sayim">
+            <h1>Son Başvuru Tarihi</h1>
+            <span id="sayac" style="color: rgb(4, 72, 121); font-size: 2rem; padding: 2rem 2rem;"></span>
+          </div>
+    
+          <script src="js/sayac.js"></script>
+
+
+      <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+          <div class="col-md-4 d-flex align-items-center">
+            <span class="mb-3 mb-md-0 text-muted">&copy;  YTÜ Erasmus + Program Birimi. İstanbul, Türkiye.</span>
+          </div>
+      
+          <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <li class="ms-3"><a class="text-muted" href="https://twitter.com/YildizEdu" ><i class="fa-sharp fa-solid fa-dove"></i></a></li>
+            <li class="ms-3"><a class="text-muted" href="https://www.instagram.com/yildizedu/"><i class="fa-solid fa-camera"></i></a></li>
+            <li class="ms-3"><a class="text-muted" href="https://tr-tr.facebook.com/YildizEdu"><i class="fa-sharp fa-solid fa-f"></i></a></li>
+          </ul>
+        </footer>
+      </div>
+
+ 
+
+     
+         <script src="js/bootstrap.bundle.min.js" ></script>
+</body>
+</html>

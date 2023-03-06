@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayıt Ol</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/df4ff89c1f.js" crossorigin="anonymous"></script>
+    <script src="js/KayitKontrol.js"></script>
+    
+  
+</head>
+<body onload="checkLogin()">
+
+    <style>
+      i{
+        font-size: x-large;
+      }
+    </style>
+
+ 
+
+<header class="p-3 bg-success ">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <a href="/" class="d-flex align-items-center mb-2 me-5  mb-lg-0 text-white text-decoration-none">
+       <a href="index.html"> <img class="d-flex" width="100" height="100" src="img/KHas.png" /></a>
+      </a>
+
+ 
+      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 ms-5 justify-content-center mb-md-0">
+          <li><a href="index.html" class="nav-link px-2 text-dark">ANASAYFA</a></li>
+          <li><a href="Sorular.html" class="nav-link px-2 text-white">SSS</a></li>
+          <li><a href="iletisim.html" class="nav-link px-2 text-white">İLETİŞİM</a></li>
+          <li><a href="basvuru.html" id="basvuru" class="nav-link px-2 text-white" >BAŞVURU YAP</a></li>
+          <li><a href="ogrenim.html" class="nav-link px-2 text-white" ">ÖĞRENİM HAREKETLİLİĞİ</a></li>
+        </ul>
+        <div class="text-end " id="header_sag">
+          <div id="btn_div" >
+        <a href="GirisYap.html"><button type="button" class="btn btn-outline-light me-2">Giriş Yap</button></a>
+        <a href="KayitOl.html"><button type="button" class="btn btn-outline-light">Kayıt Ol</button></a>
+      </div>
+      </div>
+
+      <div class="text-end">
+        <button id="logout_Btn" type="button" class="btn btn-danger" style="display:none" onclick="logout()">Çıkış</button>
+    </div>
+    </div>
+  </div>
+</header>
+
+<div class="row justify-content-center">
+    <div class="col-4">
+
+        <form>
+            
+            <h1 class="h3 mb-3 fw-normal mt-5">Hemen Kayıt Ol</h1>
+
+            <div class="form-floating py-2">
+                <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                <label for="floatingInput">Email adresi</label>
+            </div>
+            <div class="form-floating py-2">
+                <input type="password" class="form-control" id="sifre" placeholder="Şifrenizi Giriniz">
+                <label for="floatingPassword">Şifrenizi Giriniz</label>
+            </div>
+            <div class="form-floating py-2">
+                <input type="password" class="form-control" id="reSifre" placeholder="Tekrar Şifrenizi Giriniz">
+                <label for="floatingPassword">Tekrar Şifrenizi Giriniz</label>
+            </div>
+
+        </form>
+
+      </div>
+
+        <p id="sonuc"></p>
+
+        <div class="d-grid gap-2 col-3 mx-auto" >
+        <button class="w-100 btn btn-sm btn-secondary" onclick="KayitKontrol()" >Hesap Oluştur</button>
+      </div>
+  
+
+    
+</div>
+<div class="container mt-5">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+      <div class="col-md-4 d-flex align-items-center">
+        <span class="mb-3 mb-md-0 text-muted">&copy;  YTÜ Erasmus + Program Birimi. İstanbul, Türkiye.</span>
+      </div>
+  
+      <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+        <li class="ms-3"><a class="text-muted" href="https://twitter.com/YildizEdu" ><i class="fa-sharp fa-solid fa-dove"></i></a></li>
+        <li class="ms-3"><a class="text-muted" href="https://www.instagram.com/yildizedu/"><i class="fa-solid fa-camera"></i></a></li>
+        <li class="ms-3"><a class="text-muted" href="https://tr-tr.facebook.com/YildizEdu"><i class="fa-sharp fa-solid fa-f"></i></a></li>
+      </ul>
+    </footer>
+  </div>
+</body>
+
+<script src="js/bootstrap.bundle.min.js" ></script>
+<script src="session.js"></script>
+
+</html>
